@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/scheduleFragment">
+
+    <fragment
+        android:id="@+id/scheduleFragment"
+        android:name="com.chukwuka.schedule.ScheduleFragment"
+        android:label="fragment_schedule"
+        tools:layout="@layout/fragment_schedule">
+        <action
+            android:id="@+id/action_schedule_to_addEditSchedule"
+            app:destination="@id/addEditScheduleFragment" />
+        <action
+            android:id="@+id/action_schedule_to_scheduleDetail"
+            app:destination="@id/scheduleDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditScheduleFragment"
+        android:name="com.chukwuka.schedule.AddEditScheduleFragment"
+        android:label="fragment_add_edit_schedule"
+        tools:layout="@layout/fragment_add_edit_schedule">
+        <argument
+            android:name="dateInMillis"
+            app:argType="long" />
+        <argument
+            android:name="scheduleDescription"
+            android:defaultValue=" "
+            app:argType="string" />
+        <argument
+            android:name="schedule"
+            android:defaultValue="@null"
+            app:argType="com.chukwuka.schedule.data.model.Schedule"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/scheduleDetailFragment"
+        android:name="com.chukwuka.schedule.ScheduleDetailFragment"
+        android:label="ScheduleDetailFragment">
+        <argument
+            android:name="schedule"
+            app:argType="com.chukwuka.schedule.data.model.Schedule" />
+    </fragment>
+</navigation>

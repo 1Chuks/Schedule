@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Schedule</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="description_hint">Schedule description</string>
+    <string name="no_schedule">No Schedule for this day.</string>
+    <string name="period_am">am</string>
+    <string name="period_pm">pm</string>
+</resources>
